@@ -1,0 +1,16 @@
+[section/base]
+include-file = /home/scottp/.config/polybar/palette.ini
+
+include-file = /home/scottp/.config/polybar/audio.ini
+include-file = /home/scottp/.config/polybar/computer.ini
+include-file = /home/scottp/.config/polybar/display.ini
+include-file = /home/scottp/.config/polybar/i3wm.ini
+
+include-file = /home/scottp/.config/polybar/menus.ini
+include-file = /home/scottp/.config/polybar/bar.ini
+
+[global/wm]
+margin-top = 5
+margin-bottom = 2
+
+; vim:ft=dosini

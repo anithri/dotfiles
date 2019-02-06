@@ -1,0 +1,62 @@
+alias node="nodejs"
+alias guard="bundle exec guard"
+alias diff="colordiff"
+alias df="df -H"
+alias du="du -ch"
+alias ls="ls --color=auto"
+alias ll="ls -l --color=auto"
+alias lll="ls -al --color=auto"
+alias la="ls -a --color=auto"
+alias apud="sudo apt-get dist-upgrade"
+alias tw="ta work || ts work"
+alias ta="tmux a -t"
+alias ts="tmux new -s"
+alias two="ta work2 || ts work2"
+alias td='tmux detach'
+alias apu='sudo apt-get update'
+alias apuapu='apu && sudo apt-get upgrade'
+alias apuapud='apu && sudo apt-get dist-upgrade'
+alias grep='grep --color'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias vi3='vi ~/.config/i3/config'
+alias rv='rake version'
+alias rvb='rake version:bump'
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+alias cook='knife solo cook'
+alias capp='cap production'
+alias rdp='rdesktop -u scottp -d cpp -p - -g 1280x1024 -r clipboard:PRIMARYCLIPBOARD'
+alias dok='ssh -t harley'
+alias gitcam='git commit -am'
+alias RET='RAILS_ENV=test'
+alias RED='RAILS_ENV=development'
+alias gst='git status'
+alias gp='git push'
+alias grv='git remote -v'
+alias hs='history | grep'
+alias gcm='git checkout master'
+alias pedwinds='bundle exec pedwinds'
+alias rake='bundle exec rake'
+
+alias ya='yarn add'
+alias yard='yarn run dev'
+alias script='jq .scripts package.json'
+alias scripts='jq .scripts package.json'
+alias ys='yarn start'
+alias yd='yarn develop'
+alias ytw='yarn run test:watch'
+alias caps="setxkbmap -option caps:super"
+alias jqs='jq .scripts package.json'
+

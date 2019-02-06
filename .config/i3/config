@@ -1,0 +1,248 @@
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
+
+########################################
+#              core config             #
+########################################
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+set $mod Mod4
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+shift+e exec ~/bin/i3exit
+focus_follows_mouse no
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+# kill focused window
+bindsym $mod+Shift+q kill
+
+########################################
+#                Style                 #
+########################################
+font pango:DejaVu Sans Mono 8
+
+########################################
+#           window operations          #
+########################################
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+########################################
+#           workspace names            #
+########################################
+
+set $ws1  "1:  Terminals"
+set $ws2  "2:  IDE"
+set $ws3  "3:  WWW"
+set $ws4  "4: Project"
+set $ws5  "5: Other"
+set $ws6  "6: Other"
+set $ws7  "7: Other"
+set $ws8  "8: Email"
+set $ws9  "9: WWW"
+set $ws10 "10: Music"
+########################################
+#         workspace switching          #
+########################################
+workspace_auto_back_and_forth yes
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+########################################
+#          workspace outputs           #
+########################################
+workspace $ws1 output VGA-1
+workspace $ws2 output VGA-1
+workspace $ws3 output VGA-1
+workspace $ws4 output VGA-1
+workspace $ws5 output VGA-1
+workspace $ws6 output HDMI-1 
+workspace $ws7 output HDMI-1
+workspace $ws8 output HDMI-1
+workspace $ws9 output HDMI-1
+workspace $ws10 output HDMI-1 
+
+########################################
+#             Launch Keys              #
+########################################
+bindsym XF86Launch5 workspace number $ws1
+bindsym XF86Launch6 workspace number $ws2
+bindsym XF86Launch7 workspace number $ws3
+bindsym XF86Launch8 workspace number $ws4
+bindsym XF86Launch9 workspace number $ws5
+
+########################################
+#         workspace operations         #
+########################################
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+#script to rename workspace
+bindsym $mod+n exec ~/bin/rename_workspace
+bindsym $mod+Shift+Caps exec /usr/bin/setxkbmapp -option caps:super
+
+########################################
+#        Scratchpad Specific          #
+########################################
+bindsym $mod+Shift+minus mark 'scratchterm', move scratchpad
+bindsym $mod+minus [con_mark='scratchterm'] scratchpad show
+bindsym $mod+Tab [con_mark='scratchterm'] scratchpad show
+
+########################################
+#        Application Specific          #
+########################################
+for_window [class="Spotify"] move container to workspace number $ws10
+for_window [class="I3-exit"] floating enable
+for_window [class="Google-chrome"] border 1pixel
+for_window [window_type=dialog] focus
+for_window [class="jetbrains-rubymine"] $ws2
+
+########################################
+#          application startup         #
+########################################
+#exec --no-startup-id /usr/local/bin/hipchat4
+#exec --no-startup-id /usr/bin/spotify
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker "i3lock --color=002b36 -i /home/scottp/Pictures/wallpaper/star_wars_empire_flag.png"
+#exec --no-startup-id /usr/bin/redshift
+#exec --no-startup-id /usr/bin/unity-settings-daemon
+#exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+exec --no-startup-id /home/scottp/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+#exec --no-startup-id /home/scottp/Tools/jetbrains-toolbox/jetbrains-toolbox
+exec --no-startup-id xmodmap -e "keycode 112="
+exec --no-startup-id setxkbmap -option caps:super
+exec_always --no-startup-id ~/bin/polybar.sh --log=trace &
+
+########################################
+#         Keyboad shortcuts            #
+#   also see launch mode further down  #
+########################################
+# start a terminal
+bindsym $mod+Return exec /usr/bin/terminator
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -5%
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 +5%
+bindsym $mod+XF86AudioMute exec /usr/bin/pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec /home/scottp/bin/sp play && touch /tmp/didit
+bindsym $mod+backslash exec /home/scottp/bin/sp next
+bindsym XF86Calculator exec /usr/bin/gnome-calculator
+bindsym $mod+Caps exec /usr/bin/setxkbmap -option caps:super
+########################################
+#             Launch Mode              #
+########################################
+mode "launch" {
+  bindsym g exec /usr/bin/google-chrome; mode "default"
+  bindsym v exec /usr/bin/gnome-terminal -e bash -c "/usr/bin/vim ~/.i3/config"; mode "default"
+  bindsym r exec /home/scottp/Tools/apps/RubyMine/ch-0/171.3691.15/bin/rubymine.sh; mode "default"
+  bindsym w exec /home/scottp/Tools/apps/WebStorm/ch-0/171.3691.10/bin/webstorm.sh; mode "default"
+  bindsym l exec /usr/bin/google-chrome http://localhost:3000; mode "default"
+  bindsym n exec /usr/bin/nautilus; mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+
+}
+
+bindsym $mod+s mode "launch"
+
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+# bar {
+#   #i3bar_command ~/.npm-packages/bin/element dev
+#   position top
+#   status_command i3status -c ~/.config/i3status/config
+# }
