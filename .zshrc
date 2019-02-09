@@ -27,7 +27,7 @@ SAVEHIST=$HISTSIZE
 HISTFILE=~/.zsh_history
 
 # Final Path Adjustments
-export PATH="$HOME/bin/:$HOME/.local/bin:$HOME/.dotfiles/bin:$HOME/.npm-global/bin:$HOME/.yarn/bin:$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/bin/:$HOME/.local/bin:$HOME/.dotfiles/bin:$HOME/.npm-global/bin:$HOME/.yarn/bin:$PATH:"
 
 export EDITOR=/usr/bin/vi
 
@@ -37,3 +37,7 @@ export EDITOR=/usr/bin/vi
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/scottp/4winds/solarAPI/node_modules/tabtab/.completions/sls.zsh ]] && . /home/scottp/4winds/solarAPI/node_modules/tabtab/.completions/sls.zsh
+
+. $HOME/.asdf/asdf.sh
+
+. $HOME/.asdf/completions/asdf.bash
