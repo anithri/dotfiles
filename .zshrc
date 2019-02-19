@@ -38,6 +38,10 @@ export EDITOR=/usr/bin/vi
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/scottp/4winds/solarAPI/node_modules/tabtab/.completions/sls.zsh ]] && . /home/scottp/4winds/solarAPI/node_modules/tabtab/.completions/sls.zsh
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 . $HOME/.asdf/asdf.sh
 
 . $HOME/.asdf/completions/asdf.bash

@@ -162,6 +162,7 @@ for_window [class="Google-chrome"] border 1pixel
 for_window [window_type=dialog] focus
 
 assign [class="^jetbrains-rubymine$"] $ws2
+assign [class="^jetbrains-webstorm$"] $ws2
 
 
 ########################################
