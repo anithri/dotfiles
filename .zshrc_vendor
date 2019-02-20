@@ -11,3 +11,9 @@ eval "$(direnv hook zsh)"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/scottp/.npm-global-packages/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/scottp/.npm-packages/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# asdf version manager
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
+[[ $- = *i* ]] && source ~/Tools/liquidprompt/liquidprompt
