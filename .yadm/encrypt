@@ -1,6 +1,5 @@
 .aws/*
 .ssh/*
 .contentfulrc.json
-
 .npmrc
 .serverlessrc
