@@ -59,4 +59,5 @@ alias yd='yarn develop'
 alias ytw='yarn run test:watch'
 alias caps="setxkbmap -option caps:super"
 alias jqs='jq .scripts package.json'
+alias fst='foreman start'
 
