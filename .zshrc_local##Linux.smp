@@ -1,0 +1,4 @@
+
+export GITLAB_API_ENDPOINT=https://gitlab.4winds.tools/api/v4
+export GITLAB_API_PRIVATE_TOKEN=o8NiCTcxL2Y7D6PsiJkN
+
