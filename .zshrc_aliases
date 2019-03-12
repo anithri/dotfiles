@@ -1,4 +1,3 @@
-alias node="nodejs"
 alias guard="bundle exec guard"
 alias diff="colordiff"
 alias df="df -H"
