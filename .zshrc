@@ -1,3 +1,4 @@
+
 # ENV Variables
 [ -e "${HOME}/.zshrc_env" ]     && source "${HOME}/.zshrc_env"
 
@@ -13,13 +14,6 @@ plugins=(asdf autojump aws bundler bgnotify git rails ruby npm yarn history)
 # Application specific rc
 [ -e "${HOME}/.zshrc_vendor" ] && source "${HOME}/.zshrc_vendor"
 
+# Encrypted Environment 
+[ -e "${HOME}/.zshrc_private" ]     && source "${HOME}/.zshrc_private"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /home/scottp/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
