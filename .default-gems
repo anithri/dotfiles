@@ -3,4 +3,5 @@ pry
 thor
 rake
 awesome_print
+nokogiri
 
