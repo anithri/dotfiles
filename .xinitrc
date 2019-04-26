@@ -28,7 +28,7 @@ export LC_CTYPE="en_US.UTF-8"
 export TERMINAL='gnome-terminal'
 
 # exec xrandr --output DP1 --primary
-xrandr --output HDMI-1 --right-of DP-2
+#xrandr --output HDMI-1 --right-of DP-2
 # Launch i3 window manager
 eval $(dbus-launch --sh-syntax)
 export XDG_CURRENT_DESKTOP=GNOME
