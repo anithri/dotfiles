@@ -1,0 +1,35 @@
+#!/bin/bash
+JSON_FILE=package.json
+CODECOMMIT_FILE=.codecommit.json
+GIT_IGNORE_URL='https://gist.githubusercontent.com/anithri/0e562774a988109111aae35b67100a1b/raw/35af427a71416c6a88f816ee70b639b4ee94819c/.gitignore'
+GIT_IGNORE='.gitignore'
+
+[ -f $JSON_FILE ] || { echo "run in dir with $JSON_FILE" ; exit 1 ;}
+[ -f $CODECOMMIT_FILE ] && { echo "Cowardly quitting since there is a $CODECOMMIT_FILE" ; exit 1 ;}
+
+[ -f $GIT_IGNORE ] || { echo "adding .gitignore" ; curl -s "$GIT_IGNORE_URL" > .gitignore ; }
+
+inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
+
+if [ ! "$inside_git_repo" ]; then
+  echo "Creating git repo"
+  git init 
+  git add .
+  git commit -m "initial commit"
+fi 
+LOOK_FOR=origin
+REPO_NAME=`jq -r .name package.json`
+REPO_DESC=`jq -r .description package.json`
+echo $REPO_NAME "->" $REPO_DESC
+aws codecommit create-repository --repository-name $REPO_NAME --repository-description "$REPO_DESC" > .codecommit.json
+REPO_URL=`jq -r .respositoryMetadata.cloneUrlSsh`
+has_git_origin="$( git remote | grep $LOOK_FOR )"
+
+if [ "$has_git_origin" ]; then 
+  git remote add aws $REPO_URL
+  echo "AWS repo added as aws: $REPO_URL"
+else
+  git remote add origin $REPO_URL
+  echo "AWS repo added as origin: $REPO_URL"
+fi
+

@@ -1,0 +1,28 @@
+#!/bin/sh
+lock() {
+    /usr/bin/i3lock --color=002b36 -i /home/scottp/Pictures/wallpaper/star_wars_empire_flag.png
+}
+choice=$(echo 'cancel\nlock\nlogout\nreboot\nhalt' | rofi -dmenu -p 'Exit:')
+ 
+case "$choice" in
+    cancel)
+	exit 0
+	;;
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    reboot)
+        /sbin/reboot
+        ;;
+    halt)
+        /sbin/poweroff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|reboot|halt}"
+        exit 2
+esac
+
+exit 0
