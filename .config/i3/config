@@ -107,16 +107,16 @@ bindsym $mod+0 workspace number $ws10
 ########################################
 #          workspace outputs           #
 ########################################
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DP-0
-workspace $ws4 output DP-0
-workspace $ws5 output DP-0
-workspace $ws6 output DP-2 
-workspace $ws7 output DP-2
-workspace $ws8 output DP-2
-workspace $ws9 output DP-2
-workspace $ws10 output DP-2 
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output HDMI-2 
+workspace $ws7 output HDMI-2
+workspace $ws8 output HDMI-2
+workspace $ws9 output HDMI-2
+workspace $ws10 output HDMI-2 
 
 ########################################
 #             Launch Keys              #
@@ -178,7 +178,7 @@ exec --no-startup-id /home/scottp/.local/share/JetBrains/Toolbox/bin/jetbrains-t
 #exec --no-startup-id /home/scottp/Tools/jetbrains-toolbox/jetbrains-toolbox
 exec --no-startup-id xmodmap -e "keycode 112="
 exec --no-startup-id setxkbmap -option caps:super
-exec_always --no-startup-id ~/bin/polybar.sh --log=trace &
+exec_always --no-startup-id ~/bin/polybar.sh --log=trace --reload &
 
 ########################################
 #         Keyboad shortcuts            #

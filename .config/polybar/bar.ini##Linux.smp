@@ -1,0 +1,40 @@
+[bar/common]
+width = 100%
+height = 22
+offset-x = 0
+offset-y = 0
+
+;background = ${xrdb:color9}
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+modules-left = i3
+wm-restack = i3
+
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Inconsolata:style=Medium:size=11
+font-1 = Font Awesome 5 Pro,Font Awesome 5 Pro Solid:size=11:style=Solid
+font-2 = Font Awesome 5 Pro,Font Awesome 5 Pro Regular:size=11:style=Regular
+font-3 = Font Awesome 5 Pro,Font Awesome 5 Pro Light:size=11:style=Light
+font-4 = Font Awesome 5 Brands,Font Awesome 5 Brands Regular:size=11:style=Regular
+
+[bar/left]
+inherit = bar/common
+monitor = ${env:MONITOR:DP-0}
+tray-position = right
+tray-padding = 12
+;tray-scale = 0.9
+modules-center = xwindow
+modules-right = filesystem memory cpu wireless-network github date powermenu
+
+[bar/right]
+inherit = bar/common
+monitor = ${env:MONITOR:DP-2}
+tray-position = none
+modules-center = github
+modules-right = pulseaudio date
+
