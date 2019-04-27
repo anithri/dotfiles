@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+#
+require 'pathname'
+DICT = Pathname.new('./commonWords')
+
+all = DICT.readlines.map(&:chomp).select{|w| w =~ /^[a-zA-Z]{4,6}$/}
+puts all.length
+
+200.times do
+  p = all.sample(3).map(&:capitalize).join
+  puts p
+end
+
+
