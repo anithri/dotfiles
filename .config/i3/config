@@ -80,16 +80,16 @@ bindsym $mod+a focus parent
 #           workspace names            #
 ########################################
 
-set $ws1  "1:  Terminals"
-set $ws2  "2:  IDE"
-set $ws3  "3:  WWW"
-set $ws4  "4: Project"
-set $ws5  "5: Other"
-set $ws6  "6: Other"
-set $ws7  "7: Other"
-set $ws8  "8: Email"
-set $ws9  "9: WWW"
-set $ws10 "10: Music"
+set $ws1  "1: "
+set $ws2  "2:"
+set $ws3  "3:"
+set $ws4  "4:"
+set $ws5  "5:"
+set $ws6  "6:"
+set $ws7  "7:"
+set $ws8  "8:"
+set $ws9  "9:"
+set $ws10 "10:"
 ########################################
 #         workspace switching          #
 ########################################
@@ -141,7 +141,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
-
+bindsym Print exec /usr/bin/gnome-screenshot --interactive
 #script to rename workspace
 bindsym $mod+n exec ~/bin/rename_workspace
 bindsym $mod+Shift+Caps exec /usr/bin/setxkbmapp -option caps:super
@@ -170,7 +170,7 @@ assign [class="^jetbrains-webstorm$"] $ws2
 ########################################
 #exec --no-startup-id /usr/local/bin/hipchat4
 #exec --no-startup-id /usr/bin/spotify
-exec --no-startup-id /usr/bin/xautolock -time 10 -locker "i3lock --color=002b36 -i /home/scottp/Media/Pictures/wallpaper/star_wars_empire_flag.png"
+#exec --no-startup-id /usr/bin/xautolock -time 10 -locker "dm-tool switch-to-greeter'
 #exec --no-startup-id /usr/bin/redshift
 #exec --no-startup-id /usr/bin/unity-settings-daemon
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
@@ -202,8 +202,8 @@ bindsym $mod+Caps exec /usr/bin/setxkbmap -option caps:super
 mode "launch" {
   bindsym g exec /usr/bin/google-chrome; mode "default"
   bindsym v exec /usr/bin/gnome-terminal -e bash -c "/usr/bin/vim ~/.i3/config"; mode "default"
-  bindsym r exec /home/scottp/Tools/apps/RubyMine/ch-0/171.3691.15/bin/rubymine.sh; mode "default"
-  bindsym w exec /home/scottp/Tools/apps/WebStorm/ch-0/171.3691.10/bin/webstorm.sh; mode "default"
+  bindsym r exec /home/scottp/bin/rubymine; mode "default"
+  bindsym w exec /home/scottp/bin/webstorm; mode "default"
   bindsym l exec /usr/bin/google-chrome http://localhost:3000; mode "default"
   bindsym n exec /usr/bin/nautilus; mode "default"
   # back to normal: Enter or Escape
