@@ -17,3 +17,5 @@ plugins=(asdf autojump aws bundler bgnotify git rails ruby npm yarn history)
 # Encrypted Environment 
 [ -e "${HOME}/.zshrc_private" ]     && source "${HOME}/.zshrc_private"
 
+neofetch
+

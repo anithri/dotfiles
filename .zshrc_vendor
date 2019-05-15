@@ -18,4 +18,4 @@ eval "$(direnv hook zsh)"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-[[ $- = *i* ]] && source ~/Tools/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source ~/tools/liquidprompt/liquidprompt
