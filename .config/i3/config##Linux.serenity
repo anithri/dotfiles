@@ -179,7 +179,7 @@ exec --no-startup-id /home/scottp/.local/share/JetBrains/Toolbox/bin/jetbrains-t
 exec --no-startup-id xmodmap -e "keycode 112="
 exec --no-startup-id setxkbmap -option caps:super
 exec_always --no-startup-id ~/bin/polybar.sh --log=trace --reload &
-
+exec --no-startup-id feh --randomize --bg-fill ~/media/pictures/wallpaper/*
 ########################################
 #         Keyboad shortcuts            #
 #   also see launch mode further down  #
