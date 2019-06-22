@@ -1,1 +1,11 @@
-/home/scottp/Tools/dotfiles/bin/codeword
+#!/usr/bin/env ruby
+#
+require 'pathname'
+DICT = Pathname.new('/usr/share/dict/american-english')
+
+chars = ARGV.join("").chars.join(".*")
+match_with = Regexp.new chars
+DICT.each_line do |line|
+  puts line if match_with.match(line)
+end
+

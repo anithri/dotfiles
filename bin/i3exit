@@ -9,7 +9,7 @@ case "$choice" in
 	exit 0
 	;;
     lock)
-        lock
+        dm-tool lock
         ;;
     logout)
         i3-msg exit
