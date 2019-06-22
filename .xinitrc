@@ -10,7 +10,6 @@
 [[ -f ~/.Xresources ]] && xrdb -merge "${HOME}/.Xresources"
 
 # this let you toggle between different keyboard layouts
-setxkbmap -option grp:alt_shift_toggle us,it
 
 # Start a D-Bus session
 source /etc/X11/xinit/xinitrc.d/30-dbus
