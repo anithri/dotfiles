@@ -19,3 +19,13 @@ plugins=(asdf autojump aws bundler bgnotify git rails ruby npm yarn history)
 
 neofetch
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /home/scottp/.asdf/installs/nodejs/12.3.1/.npm/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
