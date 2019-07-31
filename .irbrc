@@ -8,7 +8,7 @@
 #   Ben O'Hara <bohara@gmail.com>
 #
 
-require 'irb/completion'
+#require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
 require 'awesome_print'
