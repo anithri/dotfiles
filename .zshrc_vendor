@@ -18,4 +18,7 @@ eval "$(direnv hook zsh)"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+# eksctl completions
+fpath=($fpath ~/.config/completion)
+
 [[ $- = *i* ]] && source ~/Tools/liquidprompt/liquidprompt

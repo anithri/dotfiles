@@ -166,6 +166,7 @@ for_window [class="I3-exit"] floating enable
 for_window [class="Google-chrome"] border 1pixel
 for_window [window_type=dialog] focus
 
+assign [class="^jetbrains-idea$"] $ws2
 assign [class="^jetbrains-rubymine$"] $ws2
 assign [class="^jetbrains-webstorm$"] $ws2
 
@@ -180,9 +181,9 @@ exec --no-startup-id /usr/bin/xautolock -time 10 -locker "i3lock --color=002b36 
 #exec --no-startup-id /usr/bin/unity-settings-daemon
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec --no-startup-id /home/scottp/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
+exec --no-startup-id xmodmap ~/.Xmodmap
+
 #exec --no-startup-id /home/scottp/Tools/jetbrains-toolbox/jetbrains-toolbox
-exec --no-startup-id xmodmap -e "keycode 112="
-exec --no-startup-id setxkbmap -option caps:super
 exec_always --no-startup-id ~/bin/polybar.sh --log=trace --reload &
 
 ########################################

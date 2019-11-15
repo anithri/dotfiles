@@ -62,3 +62,6 @@ alias jqs='jq .scripts package.json'
 alias jqv='jq .version package.json'
 alias fst='foreman start'
 alias yarn='yarn -s'
+alias vibat='vi ~/.config/bat/config'
+alias vissh='vi ~/.ssh/config'
+
