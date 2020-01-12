@@ -42,3 +42,16 @@ class Object
   end
 end
 
+class Array
+  def self.toy(n = 10, word = false)
+    Array.new(n).fill{word ? Symbol.all_symbols.sample : rand(n)}
+  end
+end  
+
+class Hash
+  def self.toy(n = 10, word = false)
+    word ? 
+      Symbol.all_symbols.sample(n).zip(Symbol.all_symbols.sample(n)).to_h :
+      Symbol.all_symbols.sample(n).zip(Array.new(n).fill{rand(n)}).to_h 
+  end
+end
