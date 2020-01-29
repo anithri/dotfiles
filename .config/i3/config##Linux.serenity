@@ -164,7 +164,7 @@ for_window [class="Spotify"] move container to workspace number $ws10
 for_window [class="I3-exit"] floating enable
 for_window [class="Google-chrome"] border 1pixel
 for_window [window_type=dialog] focus
-
+for_window [title="Microsoft Teams Notification"] floating enable
 assign [class="^jetbrains-rubymine$"] $ws2
 assign [class="^jetbrains-webstorm$"] $ws2
 
