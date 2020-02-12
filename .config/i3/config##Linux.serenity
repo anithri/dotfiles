@@ -107,16 +107,16 @@ bindsym $mod+0 workspace number $ws10
 ########################################
 #          workspace outputs           #
 ########################################
-workspace $ws1 output DP-1
+workspace $ws1 output DP-1 
 workspace $ws2 output DP-1
 workspace $ws3 output DP-1
 workspace $ws4 output DP-1
 workspace $ws5 output DP-1
-workspace $ws6 output HDMI-2 
+workspace $ws6 output HDMI-2
 workspace $ws7 output HDMI-2
 workspace $ws8 output HDMI-2
 workspace $ws9 output HDMI-2
-workspace $ws10 output HDMI-2 
+workspace $ws10 output HDMI-2
 
 ########################################
 #             Launch Keys              #

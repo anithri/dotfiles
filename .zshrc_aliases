@@ -62,6 +62,6 @@ alias caps="setxkbmap -option caps:super"
 alias jqs='jq .scripts package.json'
 alias jqv='jq .version package.json'
 alias fst='foreman start'
-alias yarn='yarn -s'
 alias vissh='vi ~/.ssh/config'
 alias lla='ls -al'
+alias ports='~/bin/portsMsg;ssh ports'
