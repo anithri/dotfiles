@@ -9,7 +9,7 @@
 [ -e "${HOME}/.zshrc_local" ] && source "${HOME}/.zshrc_local"
 
 source $ZSH/oh-my-zsh.sh
-plugins=(asdf autojump aws bundler bgnotify git rails ruby npm yarn history)
+plugins=(asdf ansible autojump aws bundler bgnotify git rails ruby npm yarn history)
 
 # Application specific rc
 [ -e "${HOME}/.zshrc_vendor" ] && source "${HOME}/.zshrc_vendor"
