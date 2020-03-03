@@ -112,11 +112,11 @@ workspace $ws2 output DP-0
 workspace $ws3 output DP-0
 workspace $ws4 output DP-0
 workspace $ws5 output DP-0
-workspace $ws6 output DP-2 
-workspace $ws7 output DP-2
-workspace $ws8 output DP-2
-workspace $ws9 output DP-2
-workspace $ws10 output DP-2 
+workspace $ws6 output DP-3 
+workspace $ws7 output DP-3
+workspace $ws8 output DP-3
+workspace $ws9 output DP-3
+workspace $ws10 output DP-3 
 
 ########################################
 #             Launch Keys              #
@@ -202,14 +202,15 @@ bindsym XF86AudioPlay exec /home/scottp/bin/sp play && touch /tmp/didit
 bindsym $mod+backslash exec /home/scottp/bin/sp next
 bindsym XF86Calculator exec /usr/bin/gnome-calculator
 bindsym $mod+Caps exec /usr/bin/setxkbmap -option caps:super
+bindsym Print exec /usr/bin/gnome-screenshot --interactive
 ########################################
 #             Launch Mode              #
 ########################################
 mode "launch" {
   bindsym g exec /usr/bin/google-chrome; mode "default"
   bindsym v exec /usr/bin/gnome-terminal -e bash -c "/usr/bin/vim ~/.i3/config"; mode "default"
-  bindsym r exec /home/scottp/Tools/apps/RubyMine/ch-0/171.3691.15/bin/rubymine.sh; mode "default"
-  bindsym w exec /home/scottp/Tools/apps/WebStorm/ch-0/171.3691.10/bin/webstorm.sh; mode "default"
+  bindsym r exec /home/scottp/bin/rubymine; mode "default"
+  bindsym w exec /home/scottp/bin/webstorm; mode "default"
   bindsym l exec /usr/bin/google-chrome http://localhost:3000; mode "default"
   bindsym n exec /usr/bin/nautilus; mode "default"
   # back to normal: Enter or Escape

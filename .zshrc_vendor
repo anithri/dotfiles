@@ -21,4 +21,4 @@ eval "$(direnv hook zsh)"
 # eksctl completions
 fpath=($fpath ~/.config/completion)
 
-[[ $- = *i* ]] && source ~/tools/liquidprompt/liquidprompt
+[[ $- = *i* ]] && source ~/Tools/liquidprompt/liquidprompt

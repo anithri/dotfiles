@@ -1,5 +1,5 @@
 --database=postgresql
---webpacker=react
+--api
 --skip-coffee
 --skip-action-mailbox
 --skip-action-text
@@ -7,4 +7,3 @@
 --skip-turbolinks
 --skip-test
 --skip-spring
---template=~/code/workspace/railsTemplate/rails6Template.rb

@@ -33,7 +33,7 @@ modules-right = filesystem memory cpu wireless-network github date powermenu
 
 [bar/right]
 inherit = bar/common
-monitor = ${env:MONITOR:DP-2}
+monitor = ${env:MONITOR:DP-3}
 tray-position = none
 modules-center = github
 modules-right = pulseaudio date
