@@ -1,5 +1,4 @@
 --database=postgresql
---api
 --skip-coffee
 --skip-action-mailbox
 --skip-action-text

@@ -21,6 +21,9 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias vi3='vi ~/.config/i3/config'
+alias vienv='vi ~/.zshrc_env'
+alias vialias='vi ~/.zshrc_aliases'
+
 alias rv='rake version'
 alias rvb='rake version:bump'
 # Command line head / tail shortcuts
@@ -66,3 +69,6 @@ alias vissh='vi ~/.ssh/config'
 alias lla='ls -al'
 alias ports='~/bin/portsMsg;ssh ports'
 alias vipoly='vi ~/.config/polybar/bar.ini'
+alias mail='google-chrome --app=https://outlook.office365.com > /dev/null 2>&1' 
+alias xm='xmodmap ~/.Xmodmap'
+

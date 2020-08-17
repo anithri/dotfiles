@@ -80,9 +80,9 @@ bindsym $mod+a focus parent
 #           workspace names            #
 ########################################
 
-set $ws1  "1:  Terminals"
-set $ws2  "2:  IDE"
-set $ws3  "3:  WWW"
+set $ws1  "1: Terminals"
+set $ws2  "2: IDE"
+set $ws3  "3: WWW"
 set $ws4  "4: Project"
 set $ws5  "5: Other"
 set $ws6  "6: Other"
@@ -107,16 +107,16 @@ bindsym $mod+0 workspace number $ws10
 ########################################
 #          workspace outputs           #
 ########################################
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DP-0
-workspace $ws4 output DP-0
-workspace $ws5 output DP-0
-workspace $ws6 output DP-3 
-workspace $ws7 output DP-3
-workspace $ws8 output DP-3
-workspace $ws9 output DP-3
-workspace $ws10 output DP-3 
+workspace $ws1 output DP-2
+workspace $ws2 output DP-2
+workspace $ws3 output DP-2
+workspace $ws4 output DP-2
+workspace $ws5 output DP-2
+workspace $ws6 output DP-1 
+workspace $ws7 output DP-1
+workspace $ws8 output DP-1
+workspace $ws9 output DP-1
+workspace $ws10 output DP-1 
 
 ########################################
 #             Launch Keys              #
@@ -147,9 +147,10 @@ bindsym $mod+n exec ~/bin/rename_workspace
 bindsym $mod+Shift+Caps exec /usr/bin/setxkbmapp -option caps:super
 
 #workspace pairs
-bindsym XF86HomePage workspace $ws9;workspace $ws2
-bindsym XF86Search workspace $ws9;workspace $ws4
-bindsym XF86Mail workspace $ws6;workspace $ws1
+#bindsym XF86HomePage workspace $ws9;workspace $ws2
+#bindsym XF86Search workspace $ws9;workspace $ws4
+#bindsym XF86Mail workspace $ws6;workspace $ws1
+#bindsym XF86Mail /usr/bin/google-chrome --app="https://outlook.office365.com"
 
 ########################################
 #        Scratchpad Specific          #
@@ -165,7 +166,12 @@ for_window [class="Spotify"] move container to workspace number $ws10
 for_window [class="I3-exit"] floating enable
 for_window [class="Google-chrome"] border 1pixel
 for_window [window_type=dialog] focus
+for_window [title="Microsoft Teams Notification"] floating enable
+for_window [class="Microsoft Teams - Preview"] move container to workspace number $ws8
+for_window [class="Google-chrome" window_role="pop-up" title="Mail - Scott M. Parrish - Outlook"] move container to workspace number $ws8 
 
+assign [class="Microsoft Teams - Preview"] $ws8
+assign [class="Google-chrome" window_role="pop-up" title="Mail - Scott M. Parrish - Outlook"] $ws8 
 assign [class="^jetbrains-idea$"] $ws2
 assign [class="^jetbrains-rubymine$"] $ws2
 assign [class="^jetbrains-webstorm$"] $ws2
@@ -174,17 +180,10 @@ assign [class="^jetbrains-webstorm$"] $ws2
 ########################################
 #          application startup         #
 ########################################
-#exec --no-startup-id /usr/local/bin/hipchat4
-#exec --no-startup-id /usr/bin/spotify
-exec --no-startup-id /usr/bin/xautolock -time 10 -locker "i3lock --color=002b36 -i /home/scottp/Media/Pictures/wallpaper/star_wars_empire_flag.png"
-#exec --no-startup-id /usr/bin/redshift
-#exec --no-startup-id /usr/bin/unity-settings-daemon
-#exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+exec --no-startup-id /usr/bin/xautolock -time 10 -locker "i3lock --ignore-empty-password --color=002b36 -i /home/scottp/Media/Pictures/wallpaper/star_wars_empire_flag.png"
 exec --no-startup-id /home/scottp/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
-exec --no-startup-id xmodmap ~/.Xmodmap
-
-#exec --no-startup-id /home/scottp/Tools/jetbrains-toolbox/jetbrains-toolbox
 exec_always --no-startup-id ~/bin/polybar.sh --log=trace --reload &
+exec --no-startup-id /usr/bin/teams
 
 ########################################
 #         Keyboad shortcuts            #
@@ -195,9 +194,9 @@ bindsym $mod+Return exec /usr/bin/gnome-terminal
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -5%
-bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 +5%
-bindsym $mod+XF86AudioMute exec /usr/bin/pactl set-sink-mute 0 toggle
+bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 1 -5%
+bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 1 +5%
+bindsym $mod+XF86AudioMute exec /usr/bin/pactl set-sink-mute 1 toggle
 bindsym XF86AudioPlay exec /home/scottp/bin/sp play && touch /tmp/didit
 bindsym $mod+backslash exec /home/scottp/bin/sp next
 bindsym XF86Calculator exec /usr/bin/gnome-calculator
