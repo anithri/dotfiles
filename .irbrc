@@ -20,7 +20,7 @@ IRB.conf[:PROMPT_MODE] = :SIMPLE
 
 IRB.conf[:AUTO_INDENT] = true
 
-AwesomePrint.irb!
+#AwesomePrint.irb!
 class Object
   # list methods which aren't in superclass
   def local_methods(obj = self)

@@ -33,4 +33,4 @@ tags
 TAGS
 tmp/
 node_modules
-
+.envrc

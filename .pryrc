@@ -16,21 +16,27 @@ Pry.commands.alias_command 's', 'step' rescue nil
 Pry.commands.alias_command 'n', 'next' rescue nil
 
 # === History ===
-Pry.config.history.file = File.expand_path('~/.history/ruby')
+Pry.config.history_file = File.expand_path('~/.history/ruby')
 
 # === CUSTOM PROMPT ===
 # This prompt shows the ruby version (useful for RVM)
-prompt_proc = lambda do |obj, nest_level, _|
-  ruby_info = ""
-  ruby_info << "#{Rails.version}@" if defined?(Rails)
-  ruby_info << RUBY_VERSION
-  ruby_info = "\e[32m#{ruby_info}\e[0m"
-  nest_info = "#{nest_level}"
-  obj_info  = "\e[33m#{obj}\e[0m"
-  "[#{ruby_info}] #{nest_info}:(#{obj_info}) > "
-end
+Pry.config.prompt = Pry::Prompt.new(
+  "custom",
+  "my custom prompt",
+  [proc { |obj, nest_level, _| "#{obj}:#{nest_level}> " }]
+)
 
-Pry.prompt = [prompt_proc, prompt_proc]
+#prompt_proc = lambda do |obj, nest_level, _|
+#  ruby_info = ""
+#  ruby_info << "#{Rails.version}@" if defined?(Rails)
+#  ruby_info << RUBY_VERSION
+#  ruby_info = "\e[32m#{ruby_info}\e[0m"
+#  nest_info = "#{nest_level}"
+#  obj_info  = "\e[33m#{obj}\e[0m"
+#  "[#{ruby_info}] #{nest_info}:(#{obj_info}) > "
+#end
+
+#Pry.prompt = [prompt_proc, prompt_proc]
 
 # === Listing config ===
 # Better colors - by default the headings for methods are too

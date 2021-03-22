@@ -1,8 +1,0 @@
---database=postgresql
---skip-coffee
---skip-action-mailbox
---skip-action-text
---skip-sprockets
---skip-turbolinks
---skip-test
---skip-spring
